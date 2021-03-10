@@ -2,6 +2,9 @@
   "name": "socketio-chat",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
   "repository": "https://github.com/DanielMarquesz/socketio-chat.git",
   "author": "Daniel Marques <daniel.marques142@gmail.com>",
   "license": "MIT",
