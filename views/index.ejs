@@ -7,11 +7,19 @@
   <title>Document</title>
 </head>
 <body>
+  <input type="text" name="" id="word">
+  <button onclick="send()">Enviar</button>
+
   <h1>Hello</h1>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
 <script>
   const socket = io('http://localhost:3000')
   socket.emit("Welcome",{name: "Daniel Marques"})
+
+  function send() {
+    let input = document.getElementById("word")
+    socket.emit("word", input.value)    
+  }
 </script>
 </html>

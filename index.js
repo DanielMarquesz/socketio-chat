@@ -4,8 +4,17 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
 io.on("connection",(socket) =>{ // socket: References the client that is connected
-  console.log(socket)
-  console.log(socket.id)
+
+  socket.on("Welcome", (data) => {
+    console.log('Executando evento de boas vindas!')
+    console.log(data)
+  })
+
+  socket.on("word", (data) => {
+    console.log(data)
+  })
+  // console.log(socket)
+  // console.log(socket.id)
 })
 
 app.set("view engine","ejs")
