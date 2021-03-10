@@ -1,0 +1,13 @@
+{
+  "name": "socketio-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DanielMarquesz/socketio-chat.git",
+  "author": "Daniel Marques <daniel.marques142@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^4.0.0"
+  }
+}
