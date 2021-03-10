@@ -3,7 +3,7 @@ const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
-io.on("connection",(socket) =>{
+io.on("connection",(socket) =>{ // socket: References the client that is connected
   console.log(socket)
   console.log(socket.id)
 })
