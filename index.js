@@ -10,11 +10,11 @@ io.on("connection",(socket) =>{ // socket: References the client that is connect
     console.log(data)
   })
 
-  socket.on("word", (data) => {
-    console.log(data)
+  socket.on("word", (data) => {    
+    socket.emit("result", data + " Curso de NodeJs")
+    
   })
-  // console.log(socket)
-  // console.log(socket.id)
+ 
 })
 
 app.set("view engine","ejs")
