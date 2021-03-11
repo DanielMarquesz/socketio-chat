@@ -21,10 +21,17 @@
 <script>
   const socket = io('http://localhost:3000')
 
+  socket.on("databack", (data) =>{
+    console.log(data)
+    let chat = document.getElementById("chat")    
+    let div = document.createElement("div")    
+    div.innerHTML = `${data.user} : ${data.msg}`  
+    chat.append(div)    
+  })
+
   function getMsg() {
     let msg = document.getElementById("msg").value
-    let user = document.getElementById("username").value
-    console.log("Emitiu")
+    let user = document.getElementById("username").value    
     socket.emit("data",{user, msg})
   }
  

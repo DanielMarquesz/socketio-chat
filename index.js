@@ -18,6 +18,9 @@ io.on("connection",(socket) =>{ // socket: References the client that is connect
   socket.on("data", (data) => {
     jooj = data
     console.log(data)
+
+    socket.emit("databack",(data))
+
   })
 })
 
