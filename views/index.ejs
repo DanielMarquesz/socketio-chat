@@ -6,11 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>  
+<body> 
+  <h1>Chat do Daniel</h1> 
+  <div id="chat">
+
+  </div>
+  <br>
+  <input type="text" name="" id="msg">
+  <br>
+  <input type="text" name="" id="username" placeholder="Seu nome de usuário">
+  <button onclick="getMsg()">Enviar</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
 <script>
   const socket = io('http://localhost:3000')
+
+  function getMsg() {
+    let msg = document.getElementById("msg").value
+    let user = document.getElementById("username").value
+    console.log("Emitiu")
+    socket.emit("data",{user, msg})
+  }
  
 </script>
 </html>
