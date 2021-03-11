@@ -36,12 +36,10 @@
     var msg = document.getElementById("msg").value
     var user = document.getElementById("username").value    
     socket.emit("data",{user, msg})    
-    if (msg === '') {
-      alert("Message cannot be empty")
+    if (msg === '' || user === '') {
+      alert("Field cannot be empty")
     }
-    var msg = document.getElementById("msg").value = ''  
-    
-    
+    var msg = document.getElementById("msg").value = ''      
   }  
  
 </script>
