@@ -7,18 +7,7 @@ io.on("connection",(socket) =>{ // socket: References the client that is connect
 
   socket.on("disconnect", () =>{
     console.log(socket.id + " Was disconnected!")
-  })
-
-  socket.on("Welcome", (data) => {
-    console.log('Executando evento de boas vindas!')
-    console.log(data)
-  })
-
-  socket.on("word", (data) => {    
-    socket.emit("result", data + " Curso de NodeJs")
-    
-  })
- 
+  }) 
 })
 
 app.set("view engine","ejs")
