@@ -15,11 +15,10 @@ io.on("connection",(socket) =>{ // socket: References the client that is connect
     console.log(socket.id + " Was disconnected!")
   }) 
 
-  socket.on("data", (data) => {
-    jooj = data
+  socket.on("data", (data) => {    
     console.log(data)
 
-    socket.emit("databack",(data))
+    io.emit("databack",(data))
 
   })
 })
