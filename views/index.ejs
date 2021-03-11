@@ -34,11 +34,14 @@
   function getMsg() {
     var msg = document.getElementById("msg").value
     var user = document.getElementById("username").value    
-    socket.emit("data",{user, msg})    
+    
     if (msg === '' || user === '') {
       alert("Field cannot be empty")
+    }else{
+      socket.emit("data",{user, msg})   
+      var msg = document.getElementById("msg").value = ''   
     }
-    var msg = document.getElementById("msg").value = ''      
+        
   }  
  
 </script>
