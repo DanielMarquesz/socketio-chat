@@ -16,6 +16,10 @@
 <script>
   const socket = io('http://localhost:3000')
 
+  socket.on("disconnect", () => {
+    console.log("Desconectado")
+  })
+
   socket.emit("Welcome",{name: "Daniel Marques"})
 
   socket.on("result", data => {
