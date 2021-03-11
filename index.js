@@ -5,6 +5,10 @@ const io = require('socket.io')(http)
 
 io.on("connection",(socket) =>{ // socket: References the client that is connected
 
+  socket.on("disconnect", () =>{
+    console.log(socket.id + " Was disconnected!")
+  })
+
   socket.on("Welcome", (data) => {
     console.log('Executando evento de boas vindas!')
     console.log(data)
