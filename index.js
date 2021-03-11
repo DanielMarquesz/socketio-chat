@@ -3,7 +3,6 @@ const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
-var jooj;
 
 io.on("connection",(socket) =>{ // socket: References the client that is connected
 
@@ -15,11 +14,8 @@ io.on("connection",(socket) =>{ // socket: References the client that is connect
     console.log(socket.id + " Was disconnected!")
   }) 
 
-  socket.on("data", (data) => {    
-    console.log(data)
-
+  socket.on("data", (data) => { 
     io.emit("databack",(data))
-
   })
 })
 
@@ -33,4 +29,3 @@ http.listen(3000, () => {
   console.log('The app is Running!')
 })
 
-module.exports = jooj
